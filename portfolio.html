@@ -18,21 +18,38 @@
     <header>
         <div>
             <h1>My Portfolio</h1>
-            <div class="hamburger" onclick="toogleMenu()">
+            <div class="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="about.html" title="About">About</a></li>
-                    <li><a href="web-development.html" title="Web Development">Web Development</a></li>
-                    <li><a href="graphic-design.html" title="Graphic Design">Graphic Design</a></li>
-                    <li><a href="contact-us.html" title="Contact Us">Contact Us</a></li>
-                </ul>
-            </nav>
         </div>
+    
+        <!-- NAVBAR (SHOWN ON LARGE SCREENS) -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="about.html" title="About">About</a></li>
+                <li><a href="web-development.html" title="Web Development">Web Development</a></li>
+                <li><a href="graphic-design.html" title="Graphic Design">Graphic Design</a></li>
+                <li><a href="contact-us.html" title="Contact Us">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
+    
+    <!-- SIDEBAR NAV (MOBILE VIEW) -->
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="about.html" title="About">About</a></li>
+                <li><a href="web-development.html" title="Web Development">Web Development</a></li>
+                <li><a href="graphic-design.html" title="Graphic Design">Graphic Design</a></li>
+                <li><a href="contact-us.html" title="Contact Us">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- OVERLAY -->
+    <div class="overlay"></div>    
 
     <section id="homepage" class="section">
         <div class="container">
@@ -41,7 +58,7 @@
             <img src="images/logo2.jpeg" alt="Divine Tech. Logo" title="Divine Tech.">
             <p>Welcome to the combination of you two company 
                 --- <strong title="King Josh Arts & Creativity">KING JOSH ARTS & Creativities</strong> with <strong title="Divine Tech.">Divine Tech.</strong>
-                We here to serve you better, give you better view of what you want and get, and we'd love to hear from from you..</p>
+                We here to serve you better, give you better view of what you want and get, and we'd love to hear from you.</p>
         </div>
     </section>
 
@@ -49,9 +66,9 @@
         <div class="container">
             <h2>About Me</h2>
             <p>I'm a passionate Web Developer and Graphic
-                 Designer with a keen eye for aesthetics and
-                  functionality. I speacialize in creating modern,
-                   reponsive, and visually engaging digital experiences.</p>
+                Designer with a keen eye for aesthetics and
+                functionality. I specialize in creating modern,
+                responsive, and visually engaging digital experiences.</p>
         </div>
     </section>
 
@@ -60,8 +77,8 @@
             <h2>Web Development Projects</h2>
             <div class="projects-grid">
                 <div class="project">
-                    <h3>E-Commere</h3>
-                    <p>Developed a fully e-commerce platform with sourse payment integration.</p>
+                    <h3>E-Commerce</h3>
+                    <p>Developed a fully functional e-commerce platform with secure payment integration.</p>
                 </div>
                 <div class="project">
                     <h3>Portfolio Website</h3>
@@ -71,19 +88,19 @@
         </div>
     </section>
 
-    <section id="grahic-projects" class="section">
+    <section id="graphic-projects" class="section">
         <div class="container">
             <h2>Graphic Design Projects</h2>
             <div class="projects-grid">
                 <div class="project">
                     <h3>Brand Identity Design</h3>
                     <p>Created a unique brand identity
-                     for a startup, logo and branding materials.</p>
+                    for a startup, including logo and branding materials.</p>
                 </div>
                 <div class="project">
                     <h3>Marketing Materials</h3>
                     <p>Designed promotional materials
-                     such as brouches, posters, and social media graphics.</p>
+                    such as brochures, posters, and social media graphics.</p>
                 </div>
             </div>
         </div>
@@ -92,7 +109,7 @@
     <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
-            <form action="" id="contactform">
+            <form action="" id="contactForm">
                 <label for="name">Name:</label>
                 <input type="text" id="name" required>
                     
@@ -100,9 +117,9 @@
                 <input type="email" id="email" required>
                 
                 <label for="message">Message:</label>
-                <textarea name="message" id="message" id="message"></textarea>
+                <textarea name="message" id="message"></textarea>
                 
-                <a href="#" class="btn" title="Send Message">Send</a>
+                <a href="#" class="btn" title="Send Message" onclick="submitForm(event)">Send</a>
             </form>
         </div>
     </section>

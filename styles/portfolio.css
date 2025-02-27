@@ -1,12 +1,14 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: "Port Lligat Sans", sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: bisque;
+    color: #333;
+    line-height: 1.6;
 }
 
 .container {
@@ -27,17 +29,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .navbar ul {
     list-style: none;
-    padding: 0;
     display: flex;
 }
 
 .navbar ul li {
-    /* display: inline; */
     margin: 0 15px;
 }
 
@@ -45,9 +44,10 @@ header {
     color: aliceblue;
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
+.navbar ul li a:hover {
     background-color: rgba(255, 217, 0, 0.281);
     padding: 5px;
     border-radius: 5px;
@@ -70,7 +70,7 @@ nav ul li a:hover {
 }
 
 .section {
-    padding: 10px;
+    padding: 20px;
     background: aliceblue;
     margin: 20px 0;
     border-radius: 10px;
@@ -91,7 +91,7 @@ nav ul li a:hover {
     color: gold;
 }
 
-#homepage img  {
+#homepage img {
     width: 250px;
     height: auto;
     border-radius: 10px;
@@ -103,7 +103,7 @@ header h1, .section h2, h3 {
     font-family: "Josefin Sans", 'Times New Roman';
     border-bottom: 2px solid;
     padding: 5px;
-    margin: 10px;
+    margin: 10px 0;
 }
 
 header h1, .section h3 {
@@ -121,7 +121,7 @@ header h1, .section h3 {
     color: aliceblue;
     padding: 20px;
     border-radius: 20px;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 }
 
 .project:hover {
@@ -137,7 +137,6 @@ form {
 }
 
 form input, form textarea {
-    margin: 5px 0;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -169,26 +168,41 @@ footer {
     background-color: #222;
     color: aliceblue;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #222;
+    transition: left 0.5s ease-in-out;
+    z-index: 1000;
+    display: none;
 }
 
 @media screen and (max-width: 768px) {
-    .navbar ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #222;
-        text-align: center;
+    .sidebar {
+        display: block;
     }
 
-    .navbar ul.active {
-        display: flex;
+    .navbar {
+        display: none;
+    }
+
+    .sidebar.active {
+        left: 0;
     }
 
     .hamburger {
         display: flex;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .hamburger {
+        display: none;
     }
 }
